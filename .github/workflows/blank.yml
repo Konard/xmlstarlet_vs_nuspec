@@ -10,7 +10,7 @@ jobs:
     - name: Script
       run: |
         sudo apt-get install xmlstarlet
-        CPP_PACKAGE_NUSPEC_PATH="cpp/Platform.$REPOSITORY_NAME/Platform.$REPOSITORY_NAME.TemplateLibrary.nuspec"
+        CPP_PACKAGE_NUSPEC_PATH="Platform.Exceptions.TemplateLibrary.nuspec"
         echo "$CPP_PACKAGE_NUSPEC_PATH"
         echo "$CPP_PACKAGE_NUSPEC_PATH" > CPP_PACKAGE_NUSPEC_PATH.txt
         CPP_PACKAGE_VERSION=$(xmlstarlet sel -t -m '///version[1]' -v . -n <"$CPP_PACKAGE_NUSPEC_PATH")
