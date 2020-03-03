@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Script
+      run: |
+        sudo apt-get install xmlstarlet
+        CPP_PACKAGE_NUSPEC_PATH="cpp/Platform.$REPOSITORY_NAME/Platform.$REPOSITORY_NAME.TemplateLibrary.nuspec"
+        echo "$CPP_PACKAGE_NUSPEC_PATH"
+        echo "$CPP_PACKAGE_NUSPEC_PATH" > CPP_PACKAGE_NUSPEC_PATH.txt
+        CPP_PACKAGE_VERSION=$(xmlstarlet sel -t -m '///version[1]' -v . -n <"$CPP_PACKAGE_NUSPEC_PATH")
+        echo "$CPP_PACKAGE_VERSION"
