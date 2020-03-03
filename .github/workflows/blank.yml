@@ -14,7 +14,5 @@ jobs:
         echo "$CPP_PACKAGE_NUSPEC_PATH"
         echo "$CPP_PACKAGE_NUSPEC_PATH" > CPP_PACKAGE_NUSPEC_PATH.txt
         ls "$CPP_PACKAGE_NUSPEC_PATH"
-        CPP_PACKAGE_VERSION=$(xml sel -T -t -v "/package/metadata/version" "$CPP_PACKAGE_NUSPEC_PATH")
-        echo "$CPP_PACKAGE_VERSION"
-        CPP_PACKAGE_VERSION=$(xmlstarlet sel -t -m '/package/metadata/version' -v . -n <"$CPP_PACKAGE_NUSPEC_PATH")
+        CPP_PACKAGE_VERSION=$(xmlstarlet sel -T -t -v "/package/metadata/version" "$CPP_PACKAGE_NUSPEC_PATH")
         echo "$CPP_PACKAGE_VERSION"
