@@ -16,5 +16,5 @@ jobs:
         ls "$CPP_PACKAGE_NUSPEC_PATH"
         CPP_PACKAGE_VERSION=$(grep -Pzo "<version>[^<>]+</version>" "$CPP_PACKAGE_NUSPEC_PATH")
         echo "$CPP_PACKAGE_VERSION"
-        CPP_PACKAGE_VERSION=${CPP_PACKAGE_VERSION//\<[\/]?[a-zA-Z]+\>/}
+        CPP_PACKAGE_VERSION=${CPP_PACKAGE_VERSION//<[a-zA-Z]+>/}
         echo "$CPP_PACKAGE_VERSION"
