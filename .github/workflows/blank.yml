@@ -13,6 +13,5 @@ jobs:
         CPP_PACKAGE_NUSPEC_PATH="Platform.Exceptions.TemplateLibrary.nuspec"
         echo "$CPP_PACKAGE_NUSPEC_PATH"
         echo "$CPP_PACKAGE_NUSPEC_PATH" > CPP_PACKAGE_NUSPEC_PATH.txt
-        xmlstarlet sel -t -m '///version[1]' -v . -n <"$CPP_PACKAGE_NUSPEC_PATH"
-        CPP_PACKAGE_VERSION=$(xmlstarlet sel -t -m '///version[1]' -v . -n <"$CPP_PACKAGE_NUSPEC_PATH")
+        CPP_PACKAGE_VERSION=$(xmlstarlet sel -t -m '/package/metadata/version[1]' -v . -n <"$CPP_PACKAGE_NUSPEC_PATH")
         echo "$CPP_PACKAGE_VERSION"
