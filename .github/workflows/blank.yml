@@ -9,7 +9,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Script
       run: |
-        sudo apt-get install xmlstarlet
         CPP_PACKAGE_NUSPEC_PATH="Platform.Exceptions.TemplateLibrary.nuspec"
         echo "$CPP_PACKAGE_NUSPEC_PATH"
         echo "$CPP_PACKAGE_NUSPEC_PATH" > CPP_PACKAGE_NUSPEC_PATH.txt
