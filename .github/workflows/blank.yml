@@ -14,5 +14,7 @@ jobs:
         echo "$CPP_PACKAGE_NUSPEC_PATH"
         echo "$CPP_PACKAGE_NUSPEC_PATH" > CPP_PACKAGE_NUSPEC_PATH.txt
         ls "$CPP_PACKAGE_NUSPEC_PATH"
-        CPP_PACKAGE_VERSION=$(grep -Pzo "<version>[^<>]+</version>" "$CPP_PACKAGE_NUSPEC_PATH" | sed -e 's/</?[a-zA-Z]+>//g')
+        CPP_PACKAGE_VERSION=$(grep -Pzo "<version>[^<>]+</version>" "$CPP_PACKAGE_NUSPEC_PATH")
+        echo "$CPP_PACKAGE_VERSION"
+        CPP_PACKAGE_VERSION=${CPP_PACKAGE_VERSION//\<[\/]?[a-zA-Z]+\>/}
         echo "$CPP_PACKAGE_VERSION"
